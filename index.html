@@ -701,8 +701,8 @@ function calc(){
   // ── LCA (dynamic electricity scaling) ──
   // Base electricity consumed at default inputs = 13763858 MWh/y
   // Scaling factor: (actual net elec) / (base net elec)
-  const lcaBaseElec = 13763858 * 0.9;   // base net electricity (total - 10% onsite)
-  const lcaNetElec  = B4 - B3;          // actual net electricity
+  const lcaBaseElec = 161*1000/3.2;   // base net electricity (total - 10% onsite)
+  const lcaNetElec  = (B4 - B3)/(C46+C45+C42+C38);          // actual net electricity
   const elecScale   = lcaNetElec / lcaBaseElec;
 
   // LCA base data per kg surfactant: [name, unit, D(electricity), E(emissions), F(infrastructure), G(wastewater), H(fossil-based)]
